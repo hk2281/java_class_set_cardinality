@@ -1,13 +1,69 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
+import java.io.*;
+import java.util.InputMismatchException;
  
 public class Cardinality {
  
     public static void main(String[] args) {
+
+        List<Double> listOne = new ArrayList<>();
+        List<Double> listTwo = new ArrayList<>();
+
+        Scanner input = new Scanner(System.in);
+
+        try {
+            System.out.print("введите мощность первого множества: ");
+            int length = input.nextInt();
+
+            for (int i = 0; i < length; i++) {
+                System.out.print("значение с индексом  " + i + ": ");
+                listOne.add(input.nextDouble());
+            }
+
+            System.out.print ("элементы первого множества");
+            System.out.println(listOne);
+        } catch (InputMismatchException e) {
+            System.out.println("неверное значение введите число");
+        }
+
+        try {
+            System.out.print("введите мощность второго  множества: ");
+            int length = input.nextInt();
+
+            for (int i = 0; i < length; i++) {
+                System.out.print("значение с индексом " + i + ": ");
+                listTwo.add(input.nextDouble());
+            }
+
+            System.out.print ("элементы второго множества");
+            System.out.println(listTwo);
+        } catch (InputMismatchException e) {
+            System.out.println("неверное значение введите число");
+        }
+
+
+
+
+
+
+        
+
+        // for (int i = 0; i < cardinalityTwo; i++) {
+        //     listOne.add(input.nextDouble()); // Заполняем массив элементами, введёнными с клавиатуры
+        // }
+
+        // System.out.print ("элементы второго множества");
+        // System.out.println(listTwo);
+        
+
+
  
-        List<Double> listOne = new ArrayList<>(Arrays.asList(1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0));
-        List<Double> listTwo = new ArrayList<>(Arrays.asList(10.0, 11.0, 12.0, 13.0, 14.0, 15.0));
+        // Arrays.asList(1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0)
+        // Arrays.asList(10.0, 11.0, 12.0, 13.0, 14.0, 15.0)
+
  
         SetOfNumbers setOne = new SetOfNumbers(listOne); 
         SetOfNumbers setTwo = new SetOfNumbers(6); 
