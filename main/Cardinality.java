@@ -15,12 +15,32 @@ public class Cardinality {
         Scanner input = new Scanner(System.in);
 
         try {
-            System.out.print("введите мощность первого множества: ");
-            int length = input.nextInt();
+
+            int length ;
+            while(true){
+                try {
+                    System.out.print("введите мощность первого множества: ");
+                    length = input.nextInt();
+                    break;
+                }catch(Exception e){
+                    System.out.println("неправильный ввод мощности");
+                    input.next();
+                }
+            }
+
 
             for (int i = 0; i < length; i++) {
-                System.out.print("значение с индексом  " + i + ": ");
-                listOne.add(input.nextDouble());
+                while(true){
+                    try {
+                        System.out.print("значение с индексом  " + i + ": ");
+                        listOne.add(input.nextDouble());
+                        break;
+                    }catch(Exception e){
+                        System.out.println("неправильный ввод");
+                        input.next();
+                    }
+                }
+                
             }
 
             System.out.print ("элементы первого множества");
@@ -30,12 +50,30 @@ public class Cardinality {
         }
 
         try {
-            System.out.print("введите мощность второго  множества: ");
-            int length = input.nextInt();
+
+            int length ;
+            while(true){
+                try {
+                    System.out.print("введите мощность второго множества: ");
+                    length = input.nextInt();
+                    break;
+                }catch(Exception e){
+                    System.out.println("неправильный ввод мощности");
+                    input.next();
+                }
+            }
 
             for (int i = 0; i < length; i++) {
-                System.out.print("значение с индексом " + i + ": ");
-                listTwo.add(input.nextDouble());
+                while(true){
+                    try {
+                        System.out.print("значение с индексом " + i + ": ");
+                        listTwo.add(input.nextDouble());
+                        break;
+                    }catch(Exception e){
+                        System.out.println("неправильный ввод");
+                        input.next();
+                    }
+                }
             }
 
             System.out.print ("элементы второго множества");
@@ -44,7 +82,7 @@ public class Cardinality {
             System.out.println("неверное значение введите число");
         }
 
-
+        input.close();
 
 
 
